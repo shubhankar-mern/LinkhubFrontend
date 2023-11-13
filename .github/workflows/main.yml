@@ -53,4 +53,15 @@ jobs:
     - name: Extract files on VPS
       run: |
         sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'cd /root/workplace/LinkhubFrontend && tar -xvf deploy.tar && rm deploy.tar && mv build/* . && rm -r build'           
-    
+   
+    - name: Stop existing pm2 process
+      run: |
+          sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'pm2 stop frontend'
+  
+    - name: Build and Serve React App
+      run: |
+        sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'cd /root/workplace/LinkhubFrontend && npm install && npm run build && pm2 serve . 3000 --name frontend'
+  
+    - name: Save pm2 processes
+      run: |
+        sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'pm2 save'
