@@ -19,6 +19,7 @@ const isTokenAvailable =()=>{
 root.render(
   <BrowserRouter>
   <Routes>
+  <Route path="/Linkhub/screen/:linkId" element = {<View/>}/>
     <Route path="/" element = {<Homepage/>}/>
     <Route path="/login" element = {<Login/>}/>
     <Route path="/signup" element = {<Signup/>}/>
@@ -29,7 +30,7 @@ root.render(
     
     
    
-    <Route path="http://178.16.138.73:3000/Linkhub/screen/:linkId" element = {<View/>}/>
+    
     
     </Routes> 
   </BrowserRouter>
