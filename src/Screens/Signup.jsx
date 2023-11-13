@@ -23,9 +23,9 @@ const Signup = () => {
                 email,
                 password
             }
-            //${baseUrl}
+            //
             console.log('data: ',data);
-            axios.post(`http://178.16.138.73:5000/register`,  data)
+            axios.post(`${baseUrl}/register`,  data)
             .then((res)=>{
               console.log('res: ',res.data.msg);
               setEmail('');
