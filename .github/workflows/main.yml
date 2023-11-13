@@ -55,7 +55,7 @@ jobs:
   
     - name: Build and Serve React App
       run: |
-        sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'cd /root/workplace/LinkhubFrontend && npm install && npm run build && pm2 serve build . 3000 --name frontend'
+        sshpass -p ${{ secrets.PASSWORD }} ssh -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'cd /root/workplace/LinkhubFrontend && npm install && npm run build && pm2 serve build 3000 --name frontend'
   
     - name: Save pm2 processes
       run: |
