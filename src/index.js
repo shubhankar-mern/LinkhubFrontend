@@ -29,7 +29,7 @@ root.render(
     
     
    
-    <Route path="/Linkhub/screen/:linkId" element = {<View/>}/>
+    <Route path="http://178.16.138.73:3000/Linkhub/screen/:linkId" element = {<View/>}/>
     
     </Routes> 
   </BrowserRouter>
