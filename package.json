@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "homepage": "http://178.16.138.73:3000/",
   "dependencies": {
     "@radix-ui/themes": "^2.0.0",
     "@testing-library/jest-dom": "^5.17.0",

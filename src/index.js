@@ -17,13 +17,13 @@ const isTokenAvailable =()=>{
   return a
 } 
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename='/'>
   <Routes>
-  <Route path="/Linkhub/screen/:linkId" element = {<View/>}/>
+  
     <Route path="/" element = {<Homepage/>}/>
     <Route path="/login" element = {<Login/>}/>
     <Route path="/signup" element = {<Signup/>}/>
-
+    <Route path="/Linkhub/screen/:linkId" element = {<View/>}/>
     <Route element={<PrivateRoute/>}>
       <Route exact path="/dashboard" element={<Dashboard />}/>
     </Route>
