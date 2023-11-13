@@ -14,8 +14,8 @@ const Homepage = () => {
         </div>
         <div className='flex md:flex-row justify-between mt-20 md:mx-20 mx-0 flex-col '>
         <div className='h-auto md:w-5/12  w-full flex flex-wrap text-6xl font-semibold text-white'>
-        Everything you are, in one simple link in bio.
-        <p className='text-base'>Join 40M+ people using Linktree for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other social media profiles.</p>
+        Everything you are, in one simple link.
+        <p className='text-base'>Join 40M+ people using Linktree for their link in bio. One Link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other social media profiles.</p>
         </div>
         <div className='my-auto mb-6'><img src={redafro} alt='red-afro-lady' className='rounded-lg' /></div>
         </div>
