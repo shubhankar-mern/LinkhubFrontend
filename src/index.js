@@ -5,7 +5,7 @@ import Homepage from './Screens/Homepage';
 import Login from './Screens/Login';
 import Signup from './Screens/Signup';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 import Dashboard from './Screens/Dashboard';
 import View from './Screens/View';
 import PrivateRoute from './Screens/PrivateRoute';
@@ -29,7 +29,14 @@ root.render(
     </Route>
     
     
-   
+     {/* Catch-all route */}
+     <Route
+          path="*"
+          element={
+            // Redirect to index.html
+            <Navigate to="/index.html" />
+          }
+        />
     
     
     </Routes> 
