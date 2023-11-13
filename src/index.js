@@ -30,13 +30,13 @@ root.render(
     
     
      {/* Catch-all route */}
-     <Route
+     {/* <Route
           path="*"
           element={
             // Redirect to index.html
             <Navigate to="/index.html" />
           }
-        />
+        /> */}
     
     
     </Routes> 
