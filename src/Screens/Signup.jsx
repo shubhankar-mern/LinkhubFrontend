@@ -23,8 +23,9 @@ const Signup = () => {
                 email,
                 password
             }
+            //${baseUrl}
             console.log('data: ',data);
-            axios.post(`${baseUrl}/register`, data,{ withCredentials: true })
+            axios.post(`/register`, data,{ withCredentials: true })
             .then((res)=>{
               console.log('res: ',res.data.msg);
               setEmail('');
