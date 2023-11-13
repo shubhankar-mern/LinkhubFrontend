@@ -25,7 +25,7 @@ const Signup = () => {
             }
             //${baseUrl}
             console.log('data: ',data);
-            axios.post(`http://178.16.138.73:5000/LinkhubBackend/register`, data)
+            axios.post(`http://178.16.138.73:5000/LinkhubBackend/register`,  data)
             .then((res)=>{
               console.log('res: ',res.data.msg);
               setEmail('');
