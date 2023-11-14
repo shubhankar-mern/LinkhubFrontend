@@ -61,7 +61,7 @@ const View = () => {
       {/* mobile view */}
       
                    
-                    <img src={wallpaper} className='h-full w-full absolute -z-10'/>
+                    <img src='https://raw.githubusercontent.com/shubhankar-mern/cdnimages/master/wallpaper.png' className='h-full w-full absolute -z-10'/>
                          <div className='bg-gray-400 w-28 h-28 rounded-full mx-auto '>
                             {/* image will be here */}
                             <img src={display_url} className='w-28 h-28 rounded-full'/>
