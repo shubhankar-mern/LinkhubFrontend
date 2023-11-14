@@ -1,32 +1,39 @@
 import React, {useState, useEffect} from 'react'
-import redder from '../images/pxfuel.jpg'
+import redder from '../images/concert.jpg'
 import '../index.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import config from '../config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const baseUrl = config.baseUrl;
+    const notify = (msg) => toast(msg);
     const handleClick = () => {
         let data = {
             email,
             password
         }
+        
         console.log('data: ',data);
         axios.post(`${baseUrl}/login`, data)
         .then((res)=>{
             if(res.data.status==='success'){
+                notify("Login Success");
                 console.log('res: ',res);
                 storeJwtToken(res.data.jwtkn);
             }
             else if(res.data.status==="fail"){
+                notify("Login Fail");
                 console.log('err: ',res.data);
             }
          
         }).catch((err)=>{
+            notify("Login Error");
             console.log('err: ',err);
         })
     }
@@ -45,7 +52,8 @@ const Login = () => {
           checkJWTExistorNot()
       },[])
   return (
-    <div className='h-full w-full  backdrop-blur' style={{backgroundImage:`url(${redder})`,backgroundSize:'contain'}}>
+    <div className='h-full w-full  backdrop-blur' style={{backgroundImage:`url(${redder})`,backgroundSize:'cover',backgroundRepeat: 'no-repeat'}}>
+        <ToastContainer />
         <div className='flex flex-row h-auto'>
             <div className='w-full border border-red-400 h-auto'>
 

@@ -4,6 +4,8 @@ import redder from '../images/pxfuel2.jpg'
 import { Link } from 'react-router-dom';
 import axios, { Axios } from 'axios';
 import config from '../config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -12,7 +14,7 @@ const Signup = () => {
     const baseUrl = config.baseUrl;
     
 
-
+    const notify = (msg) => toast(msg);
     const handleSubmit = (e) => {
 
         e.preventDefault();
@@ -28,22 +30,30 @@ const Signup = () => {
             axios.post(`${baseUrl}/register`,  data)
             .then((res)=>{
               console.log('res: ',res.data.msg);
-              setEmail('');
-              setName('');
-              setPassword('');
+              
+              
+              if(res.data.msg){
+                notify(res.data.msg);
+              }
+              
             }).catch((err)=>{
                 console.log('err: ',err);
+              
             })
         }
         else{
+            setEmail('');
+              setName('');
+              setPassword('');
             // alert('Passwords do not match')
-            console.log('err: pass dont match');
+            notify("Passwords don't match");
         }
     }
 
   return (
     
     <div className='h-full w-full' style={{backgroundImage:`url(${redder})`, backgroundSize:'cover',position:'relative'}}>
+         <ToastContainer />
         <div className='flex flex-row h-auto'>
             <div className='w-full border border-red-400 h-auto'>
 

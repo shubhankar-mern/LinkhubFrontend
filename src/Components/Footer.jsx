@@ -51,9 +51,9 @@ const Footers = () => {
       <div class="flex flex-col mx-auto md:mx-0">
         <div className='flex flex-row'>
         <ul className='flex flex-row text-red-700 text-sm gap-x-2'>
-        <Link to="#"><li className='font-bold'>Terms</li></Link>
-        <Link to="#"><li className='font-bold'>Privacy</li></Link>
-        <Link to ="#"><li className='font-bold mx-0'>Get in touch</li></Link>
+        <Link to="/terms"><li className='font-bold'>Terms</li></Link>
+        <Link to="/privacy"><li className='font-bold'>Privacy</li></Link>
+        <Link to ="/contactus"><li className='font-bold mx-0'>Get in touch</li></Link>
         </ul>
       </div>
       

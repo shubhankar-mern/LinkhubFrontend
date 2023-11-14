@@ -8,8 +8,14 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 import Dashboard from './Screens/Dashboard';
 import View from './Screens/View';
+import Contact from './Screens/Contact';
+import About from './Screens/About';
 import PrivateRoute from './Screens/PrivateRoute';
+import './app.css';
 import '@radix-ui/themes/styles.css';
+import Privacy from './Screens/Privacy';
+import Terms from './Screens/Terms';
+import ScrollToTop from './Components/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const isTokenAvailable =()=>{
@@ -18,6 +24,7 @@ const isTokenAvailable =()=>{
 } 
 root.render(
   <BrowserRouter basename='/'>
+    <ScrollToTop/>
   <Routes>
   
     <Route path="/" element = {<Homepage/>}/>
@@ -27,8 +34,10 @@ root.render(
     <Route element={<PrivateRoute/>}>
       <Route exact path="/dashboard" element={<Dashboard />}/>
     </Route>
-    
-    
+    <Route path="/contactus" element = {<Contact/>}/>
+    <Route path="/aboutus" element = {<About/>}/>
+    <Route path="/privacy" element = {<Privacy/>}/>
+    <Route path="/terms" element = {<Terms/>}/>
      {/* Catch-all route */}
      {/* <Route
           path="*"
