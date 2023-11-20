@@ -54,7 +54,7 @@ const Signup = () => {
     
     <div className='h-full w-full' style={{backgroundImage:`url(${redder})`, backgroundSize:'cover',position:'relative'}}>
          <ToastContainer />
-        <div className='flex flex-row h-auto'>
+        <div className='flex flex-row h-auto haze'>
             <div className='w-full border border-red-400 h-auto'>
 
             {/* , filter:'blur(4px)' */}
@@ -99,10 +99,10 @@ const Signup = () => {
 
                     <div className="text-center text-sm text-grey-dark mt-4">
                         By signing up, you agree to the 
-                        <a className="no-underline border-b border-grey-dark text-grey-dark" href="#">
+                        <a className="no-underline border-b border-grey-dark text-grey-dark" href="/terms">
                             Terms of Service
                         </a> and 
-                        <a className="no-underline border-b border-grey-dark text-grey-dark" href="#">
+                        <a className="no-underline border-b border-grey-dark text-grey-dark" href="/privacy">
                         &nbsp;Privacy Policy
                         </a>
                     </div>
